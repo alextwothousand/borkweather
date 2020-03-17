@@ -7,7 +7,6 @@ html, body {
 	animation: Background 30s ease infinite;
 
 	overflow: hidden !important;
-	background-color: turquoise;
 }
 
 @-webkit-keyframes Background {
