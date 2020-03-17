@@ -14,7 +14,6 @@ $(document).ready(() => {
 		position.longitude = pos.coords.longitude;
 
 		console.log("Able to proceed, coordinates were retrieved!");
-		console.log(position);
 
 		$.get(`https://api.openweathermap.org/data/2.5/weather?lat=${position.latitude}&lon=${position.longitude}&appid=${apiKey}&units=metric`, function(data) {
 			loadWeatherInformation(data);
