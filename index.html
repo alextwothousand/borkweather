@@ -12,14 +12,16 @@
 
 		<script src="app.js"></script>
 	</head>
-	<body>
+	<body class="has-navbar-fixed-bottom">
 		<section class="hero is-fullheight">
 			<div class="hero-body">
 				<div class="container has-text-centered">
-					<img src="https://openweathermap.org/img/wn/10d@2x.png" id="icon">
-					<h1 class="title is-1" style="font-size: 48px;"><span id="temp">NaN</span>° <span style="font-size: 32px;">C</span></h1>
-					<h2 class="subtitle" id="description">No description</h2>
-					<h5 class="title is-5" id="location">Location, Location (Lat, Long)</h5>
+					<div id="clickable">
+						<img src="https://openweathermap.org/img/wn/10d@2x.png" id="icon">
+						<h1 class="title is-1" style="font-size: 48px;"><span id="temp">NaN</span>° <span style="font-size: 32px;" id="unit">C</span></h1>
+						<h2 class="subtitle" id="description">No description</h2>
+						<h5 class="title is-5" id="location">Location, Location (Lat, Long)</h5>
+					</div>
 				</div>
 			</div>
 		  </section>
