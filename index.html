@@ -1,23 +1,18 @@
+<!DOCTYPE html>
 <html lang="en">
 	<head>
 		<meta charset="UTF-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<title>borkweather</title>
-
-		<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
-		<script src="https://cdnjs.cloudflare.com/ajax/libs/js-cookie/2.2.1/js.cookie.min.js" integrity="sha256-oE03O+I6Pzff4fiMqwEGHbdfcW7a3GRRxlL+U49L5sA=" crossorigin="anonymous"></script>
-		
 		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.8.0/css/bulma.min.css" integrity="sha256-D9M5yrVDqFlla7nlELDaYZIpXfFWDytQtiV+TaH6F1I=" crossorigin="anonymous" />
 		<link rel="stylesheet" href="main.css">
-
-		<script src="app.js"></script>
 	</head>
 	<body class="has-navbar-fixed-bottom">
 		<section class="hero is-fullheight">
 			<div class="hero-body">
 				<div class="container has-text-centered">
 					<div id="clickable">
-						<img src="https://openweathermap.org/img/wn/10d@2x.png" id="icon">
+						<img src="https://openweathermap.org/img/wn/10d@2x.png" id="icon" alt="weather icon">
 						<h1 class="title is-1" style="font-size: 48px;"><span id="temp">NaN</span>° <span style="font-size: 32px;" id="unit">C</span></h1>
 						<h2 class="subtitle" id="description">No description</h2>
 						<h5 class="title is-5" id="location">Location, Location (Lat, Long)</h5>
@@ -26,4 +21,6 @@
 			</div>
 		  </section>
 	</body>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/js-cookie/2.2.1/js.cookie.min.js" integrity="sha256-oE03O+I6Pzff4fiMqwEGHbdfcW7a3GRRxlL+U49L5sA=" crossorigin="anonymous"></script>
+	<script src="app.js"></script>
 </html>
