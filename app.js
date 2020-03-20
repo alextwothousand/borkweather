@@ -10,26 +10,27 @@ window.onload = () => {
 		document.getElementById('unit').innerText = imperial === 1 ? "F" : "C";
 	};
 
-	let unit = Cookies.get("unit");
-	if (unit === undefined || unit !== "metric" || unit !== "imperial") Cookies.set("unit", "metric", { expires: 28 });
+	let units = Cookies.get("unit");
+	units = typeof units === "undefined" ? null : units = units.trim();
+	if(typeof units === "undefined" || (units != "metric" && units !== "imperial") ) { units = "metric"; Cookies.set("unit", "metric", { expires: 28 }); }
 	navigator.geolocation.getCurrentPosition((pos) => {
 		position.latitude = pos.coords.latitude;
 		position.longitude = pos.coords.longitude;
 
 		console.log("Able to proceed, coordinates were retrieved!");
-		makeRequest(`https://api.openweathermap.org/data/2.5/weather?lat=${position.latitude}&lon=${position.longitude}&appid=${apiKey}&units=${unit}`).then(data => {
-			let initialConvertion = unit === "imperial" ? 1 : 0;
+		makeRequest(`https://api.openweathermap.org/data/2.5/weather?lat=${position.latitude}&lon=${position.longitude}&appid=${apiKey}&units=${units}`).then(data => {
+			let initialConvertion = units === "imperial" ? 1 : 0;
 			loadWeatherInformation(data, initialConvertion);
 			document.getElementById('clickable').addEventListener('click', (e) => {
 				e.preventDefault();
-				if (unit === "metric") {
+				if (units === "metric") {
 					Cookies.set("unit", "imperial", { expires: 28 });
-					unit = "imperial";
+					units = "imperial";
 					data.main.temp = doConversion(data.main.temp, 1);
 					loadWeatherInformation(data, 1);
 				} else {
 					Cookies.set("unit", "metric", { expires: 28 });
-					unit = "metric";
+					units = "metric";
 					data.main.temp = doConversion(data.main.temp, 0);
 					loadWeatherInformation(data);
 				}
